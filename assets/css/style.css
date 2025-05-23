@@ -28,32 +28,46 @@ body {
     text-align: center;
     /* no additional positioning needed—flex layout handles bottom alignment */
   }
-  
+
        /* Organizers grid styling */
 
-  .organizers-grid {
-    display: flex;
-    justify-content: center;
-    gap: 1rem;
-    margin-top: 1rem;
-  }
-  
-  /* Organizer card container: fixed size & circular */
-  .organizer-card {
-    width: 100px;
-    height: 100px;
-    border-radius: 50%;
-    overflow: hidden;
-  }
-  
-  /* Images fill container and maintain aspect (cover) */
-  .organizer-card img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
-  }
-  
+.organizers-grid {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+/* Organizer card container: fixed size and centered text */
+.organizer-card {
+  width: 100px;
+  text-align: center;
+  margin: 0 auto;
+}
+
+/* Photo wrapper: circular crop */
+.organizer-photo {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  overflow: hidden;
+  margin: 0 auto;
+}
+
+.organizer-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Name styling: wrap long names */
+.organizer-name {
+  margin-top: 0.5rem;
+  font-size: 0.9rem;
+  word-wrap: break-word;
+  line-height: 1.2;
+}  
   
   /* Header: logo left, nav right */
 .site-header {
