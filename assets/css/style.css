@@ -41,3 +41,47 @@ body {
     border-radius: 50%;
   }
   
+  /* Header: logo left, nav right */
+.site-header {
+    display: flex;
+    justify-content: space-between;  /* pushes nav to the far right */
+    align-items: center;
+    padding: 1rem 2rem;
+    background-color: #f8f9fa;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  .site-header .logo-zone {
+    display: flex;
+    align-items: center;
+  }
+  
+  .site-header .logo-zone img {
+    width: 40px;
+    height: 40px;
+  }
+  
+  .site-header .ccn-text {
+    font-weight: bold;
+    margin-left: 0.5rem;
+    font-size: 1.2rem;
+  }
+  
+  .site-header .top-nav ul {
+    list-style: none;
+    display: flex;
+    gap: 1.5rem;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .site-header .top-nav a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+  }
+  
+  .site-header .top-nav a:hover {
+    color: #007bff;
+  }
+  
