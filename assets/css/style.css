@@ -37,9 +37,11 @@ body {
   }
   .organizer-card img {
     width: 100px;
-    height: 100px;
+    max-width: 100%;
+    height: auto;
     border-radius: 50%;
   }
+  
   
   /* Header: logo left, nav right */
 .site-header {

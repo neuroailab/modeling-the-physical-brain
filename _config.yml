@@ -4,8 +4,6 @@ url: "https://neuroailab.github.io"        # your lab org’s Pages URL
 
 description: "Satellite event site for CCN conference"
 
-theme: minima     # built‑in theme; you can swap later
-
 author:
   name: "CCN Satellite Organizers"
 
