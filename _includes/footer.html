@@ -1,11 +1,13 @@
 <footer class="site-footer">
-    <h2>Organizers:</h2>
-    <div class="organizers-grid">
-      {% for org in site.data.organizers %}
-        <div class="organizer-card">
+  <h2>Organizers:</h2>
+  <div class="organizers-grid">
+    {% for org in site.data.organizers %}
+      <div class="organizer-card">
+        <p class="organizer-name">{{ org.name }}</p>
+        <div class="organizer-photo">
           <img src="{{ org.photo | relative_url }}" alt="{{ org.name }}" />
-          <p>{{ org.name }}</p>
         </div>
-      {% endfor %}
-    </div>
-  </footer>
+      </div>
+    {% endfor %}
+  </div>
+</footer>
