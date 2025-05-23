@@ -1,9 +1,43 @@
-/* Basic layout */
-body { display: flex; margin: 0; font-family: sans-serif; }
-.sidebar { width: 220px; background: #f8f9fa; }
-.container { flex: 1; padding: 2rem; }
-/* Logo zone */
-.logo-zone img { width: 40px; height: 40px; }
-/* Organizers grid */
-.organizers-grid { display: flex; gap: 1rem; margin-top: 1rem; }
-.organizer-card img { width: 100px; height: 100px; border-radius: 50%; }
+/* Make body a column flex container to keep footer at bottom */
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    margin: 0;
+    font-family: sans-serif;
+  }
+  /* Wrapper for sidebar + main content */
+  .page-wrapper {
+    display: flex;
+    flex: 1;
+  }
+  /* Sidebar styling */
+  .sidebar {
+    width: 220px;
+    background: #f8f9fa;
+  }
+  /* Main content takes remaining space */
+  .container {
+    flex: 1;
+    padding: 2rem;
+  }
+  /* Footer sticks at bottom */
+  .site-footer {
+    background: #f1f1f1;
+    padding: 1rem;
+    text-align: center;
+    /* no additional positioning needed—flex layout handles bottom alignment */
+  }
+  /* Organizers grid styling */
+  .organizers-grid {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 1rem;
+  }
+  .organizer-card img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+  }
+  
