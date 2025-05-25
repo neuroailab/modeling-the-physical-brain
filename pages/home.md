@@ -1,11 +1,14 @@
 ---
-title: Home
 layout: default
-permalink: /pages/home.html
+title: Home
+permalink: /
 ---
 
-# Modeling the Physical Brain:  
-**Spatial Organization and Biophysical Constraints**
-
-<!-- Event description placeholder -->
-Lorem ipsum dolor sit amet, consectetur adipiscing elit...
+<!-- <section class="home-section">
+  <h1>Modeling the Physical Brain</h1>
+  <div class="body-text">
+    <p>Your first paragraph here…</p>
+    <p>Your next paragraph…</p>
+    <!-- etc. -->
+  </div>
+</section> -->
