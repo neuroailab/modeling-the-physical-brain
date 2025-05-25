@@ -1,96 +1,158 @@
-
-
-  /* Wrapper for sidebar + main content
-  .page-wrapper {
-    display: flex;
-    flex: 1;
-  } */
-  /* Sidebar styling */
-  /* .sidebar {
-    width: 220px;
-    background: #f8f9fa;
-  } */
-  .wrapper,
-  .site,
-  .page-wrapper {
-    max-width: 100% !important;
-    width: 100% !important;
-    padding: 0 !important;
-    margin: 0 !important;
-  }
-  
-  /* Minima uses .site-main for content area too */
-  .site-main {
-    max-width: 100% !important;
-    padding: 0 !important;
-  }
-  
-  /* Ensure header spans the full viewport
-  .site-header {
-    width: 100%;
-    margin: 0;
-  } */
-
+/* --- Global Resets & Base Styles --- */
 html,
- body {
-  margin: 0 !important;
+body {
+  margin: 0; /* Important: Remove default body margin */
+  background-color: #28282B;
+  font-family: Arial, Helvetica, sans-serif;
+  color: #fff;
+  /* Use a base font size on html for responsive rem units */
+  font-size: 20px; /* Base for rem units. Can adjust with media queries if needed for very large/small screens. */
+  line-height: 1.5; /* Good default line height for readability */
 }
 
- /* Container margins and typography */
-  .body-text {
-    margin: 2rem 1rem 0;       /* space above and sides */
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 1.4rem;              /* base font size */
-    color: rgb(44, 43, 43);         /* text color */
-  }
-  
-  /* Paragraph line spacing and spacing between paragraphs */
-  .body-text p {
-    line-height: 2rem;          /* controls spacing between lines */
-    margin: 0 0 1rem;          /* space below each paragraph */
-    margin-bottom: 0.5rem;  /* reduce gap above footer */
+h1 {
+  color: rgb(230, 167, 247);
+}
 
-  }
-  .container {
-    flex: 1;
-    padding: 2rem;
-    padding-bottom: 0 !important;
+.title-line1, .title-line2 {
+  background: -webkit-linear-gradient(left, #d894bf, #f0a798, #e8ed91, #91edb7);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
 
-  }
-  
-  /* Footer sticks at bottom */
-  .site-footer {
-    background: #ffffff;
-    padding: 1rem;
-    text-align: center;
-    font-family: Arial, Helvetica, sans-serif;
-    color:rgb(44, 43, 43);
-    color:
-    /* no additional positioning needed—flex layout handles bottom alignment */
+
+a {
+  color: rgb(143, 216, 183);
+}
+
+a:hover {
+  color: rgb(132, 210, 214);
+}
+
+/* --- Main Layout Containers --- */
+.wrapper,
+.site,
+.page-wrapper {
+  /* Use max-width for content to prevent it from getting too wide on large screens */
+  max-width: 2000px; /* Adjust this value as needed for your content width preference */
+  margin: 0 auto; /* Center the content wrapper horizontally */
+  background: #28282B;
+  /* Add responsive padding for mobile */
+  padding: 0 1rem; /* Smaller padding on mobile, scales with font size */
+}
+
+/* Override the desktop padding with media queries for smaller screens */
+@media (min-width: 768px) { /* Apply wider padding for tablets and desktops */
+    .wrapper,
+    .site,
+    .page-wrapper {
+        padding: 0 2rem; /* A bit more padding on larger screens */
+    }
+}
+
+/* Minima uses .site-main for content area too */
+.site-main {
+  max-width: 100% !important; /* Ensure it respects its parent's width */
+  padding: 0 !important; /* Remove any default padding */
+}
+
+/* --- Body Text Content --- */
+.body-text {
+  margin: 2rem 0 0; /* Remove side margins here, handled by .page-wrapper padding */
+  font-size: 1.5rem; /* Responsive base font size (18px for 16px root) */
+  line-height: 1.8; /* Improve readability with more line spacing */
+}
+
+/* Paragraph line spacing and spacing between paragraphs */
+.body-text p {
+  margin: 0 0 1rem; /* Space below each paragraph */
+}
+.body-text p:last-child {
+    margin-bottom: 0.5rem; /* Reduce gap above footer if it's the last paragraph */
+}
+
+.long-text {
+  text-align: justify;
+}
+
+.email-link {
+    display: inline-block; /* Allows setting width/height if needed */
+    margin-top: 1rem; /* Space above the logo */
   }
 
-/* Organizers grid styling */
+  .email-link img {
+    width: 50px; /* Adjust size as needed */
+    height: auto; /* Maintain aspect ratio */
+    vertical-align: middle; /* Align image nicely with text if any */
+  }
+
+/* --- Container for main content sections --- */
+.container {
+  flex: 1; /* Retain if it's part of a flex container, otherwise can remove */
+  padding-bottom: 0 !important; /* Ensure no extra bottom padding */
+  text-align: center;
+}
+
+/* --- Footer --- */
+.site-footer {
+  padding: 2rem 1rem; /* Responsive padding */
+  text-align: center;
+  background: #28282B;
+}
+
+/* Footer title with lines */
+.site-footer h2 {
+  position: relative;
+  display: inline-block; /* Allows vertical centering of text and line placement */
+  margin: 0 auto; /* Ensures the h2 itself is centered */
+  font-size: 1.875rem; /* Responsive font size (30px for 16px root) */
+  padding: 1rem 0; /* Reduced vertical padding, lines will stretch */
+  white-space: nowrap; /* Prevent "Organizers" from wrapping */
+}
+
+.site-footer h2::before,
+.site-footer h2::after {
+  content: "";
+  position: absolute;
+  top: 50%; /* vertical center of the text */
+  width: 9999px; /* Make lines stretch maximally */
+  height: 1px;
+  background-color: currentColor; /* Use text color for lines */
+  z-index: -1; /* Place lines behind text */
+}
+
+.site-footer h2::before {
+  right: calc(100% + 1rem); /* Position before the text, with a gap */
+}
+
+.site-footer h2::after {
+  left: calc(100% + 1rem); /* Position after the text, with a gap */
+}
+
+
+/* --- Organizers Grid Styling --- */
 .organizers-grid {
   display: flex;
-  justify-content: center;
-  gap: 0.3rem;   
-  margin-top: 1rem;
+  flex-wrap: wrap; /* Allow cards to wrap to the next row on smaller screens */
+  justify-content: center; /* Center cards when they wrap */
+  gap: 1rem; /* Slightly larger gap for better separation */
+  margin-top: 1.5rem; /* More space from title */
 }
 
-/* Organizer card container: fixed size and centered text */
+/* Organizer card container: responsive width and centered text */
 .organizer-card {
-  width: 170px;
+  width: 300px; /* Adjusted to fit better on small screens, can be relative if needed */
   text-align: center;
-  margin: 0 auto;
+  /* margin: 0 auto; - Removed, handled by flexbox */
 }
 
 /* Photo wrapper: circular crop */
 .organizer-photo {
-  width: 150px;
-  height: 150px;
+  width: 200px; /* Smaller size for mobile responsiveness */
+  height: 200px; /* Maintain aspect ratio */
   border-radius: 50%;
   overflow: hidden;
-  margin: 0 auto;
+  margin: 0 auto; /* Center the photo within the card */
 }
 
 .organizer-photo img {
@@ -100,114 +162,229 @@ html,
   display: block;
 }
 
-.site-footer h2 {
-    position: relative;
-    display: inline-block;
-    margin: 0 auto;
-    font-size: 1.5rem;
-    padding: 4rem 4rem; 
-  }
-  
-  .site-footer h2::before,
-  .site-footer h2::after {
-    content: "";
-    position: absolute;
-    top: 50%;                  /* vertical center of the text */
-    width: 200px;               /* length of divider lines */
-    height: 1px;
-    background-color: #cccccc;    /* divider color */
-  }
-  
-  .site-footer h2::before {
-    left: -160px;               /* position before the text */
-  }
-  
-  .site-footer h2::after {
-    right: -160px;              /* position after the text */
-  }
-  
+/* Make each card’s name larger and prevent unwanted wrapping */
+.organizer-name {
+  font-size: 1.25rem; /* Responsive font size (18px for 16px root) */
+  font-weight: 600;
+  margin-top: 1.2rem;
+  color: rgb(198, 232, 150);
+  line-height: 0.2;
+}
 
-  /* Make each card’s name larger and never wrap */
-  .organizer-name {
-    font-size: 1.2rem;   
-    font-weight: 600;
-    text-overflow: ellipsis;
-    margin-top: 0.5rem;
-    line-height: 1.2;
-  }
+.organizer-desc {
+  font-weight: lighter;
+}
 
-  .site-header {
+/* --- Site Header --- */
+.site-header {
+  display: flex;
+  flex-direction: column; /* Stack elements vertically by default on small screens */
+  justify-content: center;
+  align-items: center;
+  position: relative; /* Needed for absolute positioning of logo/nav, but will be adjusted */
+  padding: 2rem 1rem; /* Responsive padding for header */
+  background-color: #28282B;
+  text-align: center; /* Center text within header */
+}
+
+.site-header .logo-zone,
+.site-header .top-nav {
+  position: static; /* Remove absolute positioning on mobile */
+  margin-bottom: 1rem; /* Space between elements */
+  left: auto;
+  right: auto;
+  top: auto;
+}
+
+.site-header .logo-zone {
     display: flex;
-    justify-content: center; /* centers site-title */
     align-items: center;
-    position: relative;
-    padding: 4rem 4rem;      /* your tall header padding */
-    color: rgb(229, 223, 223);
-    background-color: rgb(27, 55, 77);
+    gap: 0.5rem; /* Space between logo image and text */
+}
+
+.site-header .logo-zone img {
+  width: 50px; /* Smaller logo for mobile */
+  height: 30px;
+  position: static; /* Remove absolute positioning */
+}
+
+.site-header .ccn-text {
+  font-size: 1.25rem; /* Responsive font size (20px for 16px root) */
+  font-weight: bold;
+  white-space: nowrap;
+  line-height: 1.2;
+  position: static; /* Remove absolute positioning */
+  max-width: none;
+  overflow: visible;
+}
+
+/* Site Title (main header text) */
+.site-header .site-title {
+    margin-bottom: 1rem; /* Space below title before nav on mobile */
+}
+
+.site-header .site-title .title-line1 {
+  font-size: 1.875rem; /* Responsive (30px for 16px root) */
+  font-weight: bold;
+  display: block; /* Ensure it stays on its own line */
+  line-height: 1.2; /* Tighter line height */
+}
+.site-header .site-title .title-line2 {
+  font-size: 1.25rem !important; /* Responsive (20px for 16px root) */
+  font-weight: normal;
+  display: block; /* Ensure it stays on its own line */
+  line-height: 1.2;
+}
+
+/* Top Navigation */
+.site-header .top-nav a {
+  position: static; /* Remove absolute positioning for general link styling */
+  font-size: 1.125rem; /* Responsive font size (18px for 16px root) */
+  font-weight: 500;
+  text-decoration: none; /* Remove underline */
+  color: #fff; /* Default link color */
+}
+.site-header .top-nav a:hover {
+  color: rgb(188, 130, 215);
+}
+.site-header .top-nav ul {
+    list-style: none; /* Remove bullet points */
+    padding: 0; /* Remove default list padding */
+    margin: 0; /* Remove default list margin */
+}
+
+/* --- Desktop / Larger Screen Adjustments (Media Queries) --- */
+@media (min-width: 768px) {
+  /* Site Header: Restore desktop layout */
+  .site-header {
+    flex-direction: row; /* Back to row layout on desktop */
+    padding: 10rem 2rem 4rem 2rem; /* Original larger padding, now responsive */
+    text-align: center;
+  }
+
+  .container {
+    padding: 2rem 0;
+  }
+
+  .site-header .logo-zone {
+    position: absolute;
+    top: 2rem;
+    left: 2rem; /* Adjusted left padding */
+    margin-bottom: 0; /* Remove mobile margin */
+  }
+
+  .site-header .logo-zone img {
+    width: 75px; /* Original larger logo size */
+    height: 45px;
+  }
+
+  .site-header .ccn-text {
+    font-size: 2rem; /* Original larger font size */
+    position: absolute; /* Restore absolute positioning */
+    left: 4rem; /* Adjusted based on logo width + padding */
+  }
+
+  .site-header .site-title {
+      margin-bottom: 0; /* Remove mobile margin */
   }
 
   .site-header .site-title .title-line1 {
-    display: block;
-    font-size: 3rem;    /* size for line 1 */
-    font-weight: bold;
-    font-family: Arial, Helvetica, sans-serif;
+    font-size: 3rem; /* Original desktop font size */
   }
   .site-header .site-title .title-line2 {
-    display: block;
-    font-size: 2rem !important;    /* smaller size for line 2 */
-    font-weight: normal;
-    font-family: Arial, Helvetica, sans-serif;
-  }
-  
-  .site-header .logo-zone {
-    margin-top: 0.1rem;   
-    align-items: center;
-    position: absolute;
-    top: 0.5rem;       /* flush with the very top of .site-header */
-    left: 1rem;  
-  }
-  
-  .site-header .logo-zone img {
-    width: 75px;
-    height: 45px;
-    align-items: center;
-    position: absolute;
-    top: 0.5rem;       /* flush with the very top of .site-header */
-    left: 1rem;  
-  }
-  
-  .site-header .ccn-text {
-    white-space: nowrap;
-    line-height: 1.2;
-    display: inline-block;
-    font-size: 2rem;
-    font-family: Arial, Helvetica, sans-serif;
-    font-weight: bold;
-    position: absolute;
-    max-width: none;
-    overflow: visible;
-    top: 0.5rem;       /* flush with the very top of .site-header */
-    left: 5.5rem;  
-  }
-    
-    /* ← Add this: */
-  .site-header .top-nav {
-    position: absolute;
-    top: 0.5rem;       /* flush with the very top of .site-header */
-    right: 1rem;  
+    font-size: 2rem !important; /* Original desktop font size */
   }
 
-  /* Move only the Home link up */
-  .site-header .top-nav a {
+  .site-header .top-nav {
     position: absolute;
-    font-family: Arial, Helvetica, sans-serif;
-    top: 0.5rem;       /* flush with the very top of .site-header */
-    right: 1rem;  
-    color: rgb(229, 223, 223);
-    font-size: 1.5rem;          /* adjust font size */
-    font-weight: 500;          /* adjust font size */
+    top: 2rem;
+    right: 2rem; /* Adjusted right padding */
+    margin-bottom: 0; /* Remove mobile margin */
+    text-align: right;
   }
-  .site-header .top-nav a:hover {
-    color: rgb(229, 223, 223);
+
+  .site-header .top-nav a {
+    font-size: 1.5rem; /* Original desktop font size */
   }
-  
+
+  /* Footer H2 divider lines - adjust for larger screens */
+  .site-footer h2::before {
+    right: calc(100% + 2rem); /* More space on desktop */
+  }
+
+  .site-footer h2::after {
+    left: calc(100% + 2rem); /* More space on desktop */
+  }
+
+  .organizers-grid {
+    gap: 5rem;
+  }
+}
+
+table {
+  width: 80%; /* Adjust table width as needed */
+  border-collapse: collapse; /* Collapse borders to avoid double lines */
+  margin: 20px auto; /* Center the table on the page */
+  font-family: Arial, sans-serif;
+}
+
+th, td {
+  padding: 10px 15px; /* Padding inside cells */
+  text-align: left; /* Align text to the left */
+  border: 1px solid transparent; /* Default light grey border for all sides */
+}
+
+/* Target the right border of the first column (which is the middle vertical line) */
+th:first-child,
+td:first-child {
+  width: 20%;
+  border-right: 4px solid #e491d3; /* Highlighted blue border */
+}
+
+/* Optional: Remove the top and bottom borders if you only want the middle line visible */
+/*
+th, td {
+  border-top: none;
+  border-bottom: none;
+}
+*/
+
+/* Optional: Style for header */
+th {
+  font-weight: bold;
+}
+
+.border {
+  border-top: 4px solid #91cbe4;
+  border-bottom: 4px solid #91cbe4; /* Highlighted orange border */
+}
+
+/* --- Smaller Mobile Specific Adjustments (if needed) --- */
+@media (max-width: 480px) {
+    .site-header .site-title {
+      margin: 3rem 0;
+    }
+
+    .site-header .site-title .title-line1 {
+        font-size: 1.5rem; /* Even smaller font on very small mobiles */
+    }
+    .site-header .site-title .title-line2 {
+        font-size: 1rem !important; /* Even smaller font on very small mobiles */
+    }
+    .site-footer h2 {
+        font-size: 1.5rem; /* Smaller footer title on very small mobiles */
+    }
+    .body-text {
+        font-size: 1rem; /* Smaller body text on very small mobiles */
+    }
+    .organizer-card {
+        width: 200px; /* Make cards slightly smaller if necessary for very narrow screens */
+    }
+    .organizer-photo {
+        width: 150px;
+        height: 150px;
+    }
+    .organizer-name, .organizer-desc {
+        font-size: 1rem;
+    }
+}
