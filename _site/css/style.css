@@ -34,11 +34,11 @@ a:hover {
 .site,
 .page-wrapper {
   /* Use max-width for content to prevent it from getting too wide on large screens */
-  max-width: 2000px; /* Adjust this value as needed for your content width preference */
+  max-width: 1000px; /* Adjust this value as needed for your content width preference */
   margin: 0 auto; /* Center the content wrapper horizontally */
   background: #28282B;
   /* Add responsive padding for mobile */
-  padding: 0 1rem; /* Smaller padding on mobile, scales with font size */
+  padding: 0 0.5rem; /* Smaller padding on mobile, scales with font size */
 }
 
 /* Override the desktop padding with media queries for smaller screens */
@@ -46,7 +46,7 @@ a:hover {
     .wrapper,
     .site,
     .page-wrapper {
-        padding: 0 2rem; /* A bit more padding on larger screens */
+        padding: 0 1rem; /* A bit more padding on larger screens */
     }
 }
 
@@ -58,17 +58,17 @@ a:hover {
 
 /* --- Body Text Content --- */
 .body-text {
-  margin: 2rem 0 0; /* Remove side margins here, handled by .page-wrapper padding */
-  font-size: 1.5rem; /* Responsive base font size (18px for 16px root) */
+  margin: 1rem 0 0; /* Remove side margins here, handled by .page-wrapper padding */
+  font-size: 0.75rem; /* Responsive base font size (18px for 16px root) */
   line-height: 1.8; /* Improve readability with more line spacing */
 }
 
 /* Paragraph line spacing and spacing between paragraphs */
 .body-text p {
-  margin: 0 0 1rem; /* Space below each paragraph */
+  margin: 0 0 0.5rem; /* Space below each paragraph */
 }
 .body-text p:last-child {
-    margin-bottom: 0.5rem; /* Reduce gap above footer if it's the last paragraph */
+    margin-bottom: 0.25rem; /* Reduce gap above footer if it's the last paragraph */
 }
 
 .long-text {
@@ -77,11 +77,11 @@ a:hover {
 
 .email-link {
     display: inline-block; /* Allows setting width/height if needed */
-    margin-top: 1rem; /* Space above the logo */
+    margin-top: 0.5rem; /* Space above the logo */
   }
 
   .email-link img {
-    width: 50px; /* Adjust size as needed */
+    width: 25px; /* Adjust size as needed */
     height: auto; /* Maintain aspect ratio */
     vertical-align: middle; /* Align image nicely with text if any */
   }
@@ -95,9 +95,10 @@ a:hover {
 
 /* --- Footer --- */
 .site-footer {
-  padding: 2rem 1rem; /* Responsive padding */
+  padding: 1rem 0.5rem; /* Responsive padding */
   text-align: center;
   background: #28282B;
+  font-size: 10px;
 }
 
 /* Footer title with lines */
@@ -105,8 +106,8 @@ a:hover {
   position: relative;
   display: inline-block; /* Allows vertical centering of text and line placement */
   margin: 0 auto; /* Ensures the h2 itself is centered */
-  font-size: 1.875rem; /* Responsive font size (30px for 16px root) */
-  padding: 1rem 0; /* Reduced vertical padding, lines will stretch */
+  font-size: 0.64rem; /* Responsive font size (30px for 16px root) */
+  padding: 0.5rem 0; /* Reduced vertical padding, lines will stretch */
   white-space: nowrap; /* Prevent "Organizers" from wrapping */
 }
 
@@ -122,11 +123,11 @@ a:hover {
 }
 
 .site-footer h2::before {
-  right: calc(100% + 1rem); /* Position before the text, with a gap */
+  right: calc(100% + 0.5rem); /* Position before the text, with a gap */
 }
 
 .site-footer h2::after {
-  left: calc(100% + 1rem); /* Position after the text, with a gap */
+  left: calc(100% + 0.5rem); /* Position after the text, with a gap */
 }
 
 
@@ -135,21 +136,21 @@ a:hover {
   display: flex;
   flex-wrap: wrap; /* Allow cards to wrap to the next row on smaller screens */
   justify-content: center; /* Center cards when they wrap */
-  gap: 1rem; /* Slightly larger gap for better separation */
-  margin-top: 1.5rem; /* More space from title */
+  gap: 0.5rem; /* Slightly larger gap for better separation */
+  margin-top: 0.75rem; /* More space from title */
 }
 
 /* Organizer card container: responsive width and centered text */
 .organizer-card {
-  width: 300px; /* Adjusted to fit better on small screens, can be relative if needed */
+  width: 150px; /* Adjusted to fit better on small screens, can be relative if needed */
   text-align: center;
   /* margin: 0 auto; - Removed, handled by flexbox */
 }
 
 /* Photo wrapper: circular crop */
 .organizer-photo {
-  width: 200px; /* Smaller size for mobile responsiveness */
-  height: 200px; /* Maintain aspect ratio */
+  width: 100px; /* Smaller size for mobile responsiveness */
+  height: 100px; /* Maintain aspect ratio */
   border-radius: 50%;
   overflow: hidden;
   margin: 0 auto; /* Center the photo within the card */
@@ -164,9 +165,9 @@ a:hover {
 
 /* Make each card’s name larger and prevent unwanted wrapping */
 .organizer-name {
-  font-size: 1.25rem; /* Responsive font size (18px for 16px root) */
+  font-size: 0.625rem; /* Responsive font size (18px for 16px root) */
   font-weight: 600;
-  margin-top: 1.2rem;
+  margin-top: 0.6rem;
   color: rgb(198, 232, 150);
   line-height: 0.2;
 }
@@ -182,7 +183,7 @@ a:hover {
   justify-content: center;
   align-items: center;
   position: relative; /* Needed for absolute positioning of logo/nav, but will be adjusted */
-  padding: 2rem 1rem; /* Responsive padding for header */
+  padding: 1rem 0.5rem; /* Responsive padding for header */
   background-color: #28282B;
   text-align: center; /* Center text within header */
 }
@@ -190,7 +191,7 @@ a:hover {
 .site-header .logo-zone,
 .site-header .top-nav {
   position: static; /* Remove absolute positioning on mobile */
-  margin-bottom: 1rem; /* Space between elements */
+  margin-bottom: 0.5rem; /* Space between elements */
   left: auto;
   right: auto;
   top: auto;
@@ -199,17 +200,17 @@ a:hover {
 .site-header .logo-zone {
     display: flex;
     align-items: center;
-    gap: 0.5rem; /* Space between logo image and text */
+    gap: 0.25rem; /* Space between logo image and text */
 }
 
 .site-header .logo-zone img {
-  width: 50px; /* Smaller logo for mobile */
-  height: 30px;
+  width: 25px; /* Smaller logo for mobile */
+  height: 15px;
   position: static; /* Remove absolute positioning */
 }
 
 .site-header .ccn-text {
-  font-size: 1.25rem; /* Responsive font size (20px for 16px root) */
+  font-size: 0.625rem; /* Responsive font size (20px for 16px root) */
   font-weight: bold;
   white-space: nowrap;
   line-height: 1.2;
@@ -220,17 +221,17 @@ a:hover {
 
 /* Site Title (main header text) */
 .site-header .site-title {
-    margin-bottom: 1rem; /* Space below title before nav on mobile */
+    margin-bottom: 0.5rem; /* Space below title before nav on mobile */
 }
 
 .site-header .site-title .title-line1 {
-  font-size: 1.875rem; /* Responsive (30px for 16px root) */
+  font-size: 0.64rem; /* Responsive (30px for 16px root) */
   font-weight: bold;
   display: block; /* Ensure it stays on its own line */
   line-height: 1.2; /* Tighter line height */
 }
 .site-header .site-title .title-line2 {
-  font-size: 1.25rem !important; /* Responsive (20px for 16px root) */
+  font-size: 0.625rem !important; /* Responsive (20px for 16px root) */
   font-weight: normal;
   display: block; /* Ensure it stays on its own line */
   line-height: 1.2;
@@ -239,7 +240,7 @@ a:hover {
 /* Top Navigation */
 .site-header .top-nav a {
   position: static; /* Remove absolute positioning for general link styling */
-  font-size: 1.125rem; /* Responsive font size (18px for 16px root) */
+  font-size: 0.57rem; /* Responsive font size (18px for 16px root) */
   font-weight: 500;
   text-decoration: none; /* Remove underline */
   color: #fff; /* Default link color */
@@ -258,30 +259,30 @@ a:hover {
   /* Site Header: Restore desktop layout */
   .site-header {
     flex-direction: row; /* Back to row layout on desktop */
-    padding: 10rem 2rem 4rem 2rem; /* Original larger padding, now responsive */
+    padding: 5rem 1rem 2rem 1rem; /* Original larger padding, now responsive */
     text-align: center;
   }
 
   .container {
-    padding: 2rem 0;
+    padding: 1rem 0;
   }
 
   .site-header .logo-zone {
     position: absolute;
-    top: 2rem;
-    left: 2rem; /* Adjusted left padding */
+    top: 1rem;
+    left: 1rem; /* Adjusted left padding */
     margin-bottom: 0; /* Remove mobile margin */
   }
 
   .site-header .logo-zone img {
-    width: 75px; /* Original larger logo size */
-    height: 45px;
+    width: 37px; /* Original larger logo size */
+    height: 23px;
   }
 
   .site-header .ccn-text {
-    font-size: 2rem; /* Original larger font size */
+    font-size: 1rem; /* Original larger font size */
     position: absolute; /* Restore absolute positioning */
-    left: 4rem; /* Adjusted based on logo width + padding */
+    left: 2rem; /* Adjusted based on logo width + padding */
   }
 
   .site-header .site-title {
@@ -289,35 +290,35 @@ a:hover {
   }
 
   .site-header .site-title .title-line1 {
-    font-size: 3rem; /* Original desktop font size */
+    font-size: 1.5rem; /* Original desktop font size */
   }
   .site-header .site-title .title-line2 {
-    font-size: 2rem !important; /* Original desktop font size */
+    font-size: 1rem !important; /* Original desktop font size */
   }
 
   .site-header .top-nav {
     position: absolute;
-    top: 2rem;
-    right: 2rem; /* Adjusted right padding */
+    top: 1rem;
+    right: 1rem; /* Adjusted right padding */
     margin-bottom: 0; /* Remove mobile margin */
     text-align: right;
   }
 
   .site-header .top-nav a {
-    font-size: 1.5rem; /* Original desktop font size */
+    font-size: 0.75rem; /* Original desktop font size */
   }
 
   /* Footer H2 divider lines - adjust for larger screens */
   .site-footer h2::before {
-    right: calc(100% + 2rem); /* More space on desktop */
+    right: calc(100% + 1rem); /* More space on desktop */
   }
 
   .site-footer h2::after {
-    left: calc(100% + 2rem); /* More space on desktop */
+    left: calc(100% + 1rem); /* More space on desktop */
   }
 
   .organizers-grid {
-    gap: 5rem;
+    gap: 2.5rem;
   }
 }
 
@@ -371,7 +372,7 @@ th {
     .site-header .site-title .title-line2 {
         font-size: 1rem !important; /* Even smaller font on very small mobiles */
     }
-    .site-footer h2 {
+    .site-footer h1 {
         font-size: 1.5rem; /* Smaller footer title on very small mobiles */
     }
     .body-text {
@@ -386,5 +387,25 @@ th {
     }
     .organizer-name, .organizer-desc {
         font-size: 1rem;
+    }
+
+    .site-header .logo-zone img {
+      width: 50px; /* Smaller logo for mobile */
+      height: 30px;
+      position: static; /* Remove absolute positioning */
+    }
+
+    .site-header .ccn-text {
+      font-size: 1.275rem; /* Responsive font size (20px for 16px root) */
+      font-weight: bold;
+      white-space: nowrap;
+      line-height: 1.2;
+      position: static; /* Remove absolute positioning */
+      max-width: none;
+      overflow: visible;
+    }
+
+    .site-header .top-nav a {
+      font-size: 1rem;
     }
 }
