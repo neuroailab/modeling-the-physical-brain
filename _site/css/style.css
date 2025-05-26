@@ -14,11 +14,12 @@ h1 {
   color: rgb(230, 167, 247);
 }
 
-.title-line1, .title-line2 {
-  background: -webkit-linear-gradient(left, #d894bf, #f0a798, #e8ed91, #91edb7);
+/* .title-line1, .title-line2 { */
+  /* background: -webkit-linear-gradient(left, #d894bf, #f0a798, #e8ed91, #91edb7);
   -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
+  -webkit-text-fill-color: transparent; */
+  /* color: white
+} */
 
 
 a {
@@ -225,16 +226,21 @@ a:hover {
 }
 
 .site-header .site-title .title-line1 {
-  font-size: 0.64rem; /* Responsive (30px for 16px root) */
+  font-size: 0.68rem; /* Responsive (30px for 16px root) */
   font-weight: bold;
   display: block; /* Ensure it stays on its own line */
   line-height: 1.2; /* Tighter line height */
+  color:rgb(230, 167, 247);
+
+  
 }
 .site-header .site-title .title-line2 {
   font-size: 0.625rem !important; /* Responsive (20px for 16px root) */
   font-weight: normal;
   display: block; /* Ensure it stays on its own line */
   line-height: 1.2;
+  color: white
+
 }
 
 .site-header .site-title .title-line3 {
