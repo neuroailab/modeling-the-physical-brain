@@ -237,6 +237,18 @@ a:hover {
   line-height: 1.2;
 }
 
+.site-header .site-title .title-line3 {
+  color: rgb(230, 225, 225);                 /* normal state color */
+  transition: color 0.2s ease;    /* smooth color fade */
+}
+
+.title-line3:hover,
+.title-line3:focus {
+  color: rgb(230, 225, 225);                 /* hover/focus state color */
+  outline: none;                  /* remove default focus outline */
+  text-decoration: underline;
+}
+
 /* Top Navigation */
 .site-header .top-nav a {
   position: static; /* Remove absolute positioning for general link styling */
